@@ -30,7 +30,6 @@ const Navbar = () => {
           handleClick={()=>{
             if(address) navigate('create-campaign')
             else 'connect()'
-            
           }}
         />
 
