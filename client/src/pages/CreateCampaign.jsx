@@ -18,7 +18,15 @@ const CreateCampaign = () => {
     image: '',
   });
 
+  const handleFormFieldChange = (fieldName, e) => {
+    setForm({ ...form, [fieldName]: e.target.value })
+
+  }
+
   const handleChange = (e) => {
+    e.preventDefault();
+
+    console.log(form)
   }
 
 
@@ -35,14 +43,16 @@ const CreateCampaign = () => {
             placeholder="Write your name here"
             inputType="text"
             value={form.name}
-            handleChange={() => {}}
+            handleChange={(e) => handleFormFieldChange
+              ('name', e)}
           />
           <FormField 
             labelName="Campaign Title *"
             placeholder="Write a Title for your"
             inputType="text"
-            value={form.name}
-            handleChange={() => {}}
+            value={form.title}
+            handleChange={(e) => handleFormFieldChange
+              ('title', e)}
           />
         </div>
         <FormField 
@@ -51,7 +61,8 @@ const CreateCampaign = () => {
             isTextArea
             inputType="text"
             value={form.description}
-            handleChange={() => {}}
+            handleChange={(e) => handleFormFieldChange
+              ('description', e)}
         />
         <div className="w-full flex justify-start items-center p-4 bg-[#8c6dfd] h-[120px] rounded-[10px]">
           <img src={money} alt="money" className="w-[40px] h-[40px] object-contain"/>
