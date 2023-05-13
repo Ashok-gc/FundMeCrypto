@@ -31,6 +31,17 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
           {...campaign}
           handleClick={() => handleNavigate(campaign)}
         />)}
+         
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   )

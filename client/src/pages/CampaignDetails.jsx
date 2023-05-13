@@ -40,12 +40,15 @@ const CampaignDetails = () => {
   return (
     <div>
       {isLoading && <Loader />}
+      <div>
+            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">{state.title}</h4>
+      </div>
 
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
           <img src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl"/>
           <div className="relative w-full h-[5px] bg-[#3a3a43] mt-2">
-            <div className="absolute h-full bg-[#4acd8d]" style={{ width: `${calculateBarPercentage(state.target, state.amountCollected)}%`, maxWidth: '100%'}}>
+            <div className="absolute h-full bg-[#1db0c0]" style={{ width: `${calculateBarPercentage(state.target, state.amountCollected)}%`, maxWidth: '100%'}}>
             </div>
           </div>
         </div>
@@ -60,7 +63,7 @@ const CampaignDetails = () => {
       <div className="mt-[60px] flex lg:flex-row flex-col gap-5">
         <div className="flex-[2] flex flex-col gap-[40px]">
           <div>
-            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Creator</h4>
+            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Campaign Creator</h4>
 
             <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
               <div className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
@@ -100,7 +103,7 @@ const CampaignDetails = () => {
         <div className="flex-1">
           <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Fund</h4>   
 
-          <div className="mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px]">
+          <div className="mt-[20px] flex flex-col p-4 bg-[#1c1c24] rounded-[10px] shadow-lg hover:shadow-2xl" style={{ boxShadow: "0px 0px 15px #1db0c0" }}>
             <p className="font-epilogue fount-medium text-[20px] leading-[30px] text-center text-[#808191]">
               Fund the campaign
             </p>
@@ -122,7 +125,7 @@ const CampaignDetails = () => {
               <CustomButton 
                 btnType="button"
                 title="Fund Campaign"
-                styles="w-full bg-[#8c6dfd]"
+                styles="w-full bg-[#1db0c0]"
                 handleClick={handleDonate}
               />
             </div>
