@@ -8,6 +8,8 @@ import {
 } from "@thirdweb-dev/react";
 
 import { ethers } from "ethers";
+import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
+
 
 const StateContext = createContext();
 
@@ -92,6 +94,10 @@ export const StateContextProvider = ({ children }) => {
         contract,
         connect,
         createCampaign: publishCampaign,
+        getCampaigns,
+        getUserCampaigns,
+        donate,
+        getDonations
       }}
     >
       {children}
